@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const EmployeeSchema = new mongoose.Schema({
   recordId: { type: String, required: true, unique: true },
-  photoUrl: { type: String },
+  photoUrl: { type: String, match: /^https?:\/\//, message: "Invalid URL format" },
   firstName: { type: String },
   lastName: { type: String },
   email: { type: String },
